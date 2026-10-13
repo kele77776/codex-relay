@@ -1,5 +1,23 @@
 # @codex-relay/mobile
 
+## 1.6.2-ship.2
+
+### Patch Changes
+
+- ab4a7f0: Carry Hot Updater rc47's JavaScript: the SDK calls its native module directly, requires `rollbackReleases` in every Release catalog, and drops the `EMBEDDED` Release kind. It runs on every installed 1.6.x binary, since the oldest, 1.6.0, carries the RC23 native module with every method the SDK calls, so it is widened to app versions 1.6.x after its deploy.
+
+## 1.6.2-ship.1
+
+### Patch Changes
+
+- 7f9456f: Reload right after downloading a force update, at launch and in Settings, instead of waiting for the next launch or Restart. The OTA carries Hot Updater rc46's JavaScript, which runs on every installed 1.6.x binary (it drops only code no v1 native module needed), so it is widened to app versions 1.6.x after its deploy: the App Store 1.6.0 binary and TestFlight 1.6.1 receive it along with native 1.6.2.
+
+## 1.6.1-ship.4
+
+### Patch Changes
+
+- ac46f2e: Upgrade Hot Updater to rc44. The SDK downloads updates from the presigned R2 URLs the RC44 server returns and accepts only absolute download URLs. Its JavaScript is otherwise the same as rc41's apart from its version, so this OTA needs no new native code and is widened to app versions 1.6.x after its deploy, like `1.6.1-ship.3`: the App Store 1.6.0 binary receives it along with TestFlight 1.6.1.
+
 ## 1.6.1-ship.3
 
 ### Patch Changes
